@@ -1,5 +1,5 @@
-from .json.Importer import Importer
-from .json.Exporter import Exporter
+from Importer import Importer
+from Exporter import Exporter
 
 
 class App:

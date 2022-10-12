@@ -7,9 +7,11 @@ class Importer:
         pass
 
     def read_tasks(self):
-        # TODO odczytaj plik i zdekoduj treść tutaj
-        pass
+        with open(r"taski.json", encoding='utf-8') as f:
+            data = json.load(f)
+            
+        return data
 
     def get_tasks(self):
-        # TODO zwróć zdekodowane taski tutaj
-        pass
+        return self.read_tasks()
+        

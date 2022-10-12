@@ -71,6 +71,7 @@ class RatioObtainer:
                 if item["base_currency"] == self.base and item["target_currency"] == self.target:
                         if str(date_) != str(item["date_fetched"]):
                             item["date_fetched"] = date_
+                            item["ratio"] = ratio
                             isUpdated = True
                 
             
