@@ -1,10 +1,9 @@
-# coding=utf-8
+import re
+from collections import Counter
 
-# input: array with multiple strings
-# expected output: rank of the 3 most often repeated words in given set of strings and number of times they occured, case insensitive
 
 sentences = [
-    'Taki mamy klimat',
+    'Taki mamy klimat mamy mamy klimat',
     'Wszędzie dobrze ale w domu najlepiej',
     'Wyskoczył jak Filip z konopii',
     'Gdzie kucharek sześć tam nie ma co jeść',
@@ -21,11 +20,14 @@ sentences = [
     'Mam nadzieję, że poradzisz sobie z tym zadaniem bez problemu',
     'Nie powinno sprawić żadnego problemu, bo Google jest dozwolony',
 ]
+all = ''
+for i in sentences:
+    all = all+' '+ i
+    
+words = re.findall(r'\w+',all)
+most = Counter(words).most_common()
 
-# Example result:
-# 1. "mam" - 12
-# 2. "tak" - 5
-# 3. "z" - 2
+print("1. " + str(most[0][0]) +" - "+ str(most[0][1]))
+print("2. " + str(most[1][0]) +" - "+ str(most[1][1]))
+print("3. " + str(most[2][0]) +" - "+ str(most[2][1]))
 
-
-# Good luck! You can write all the code in this file.
